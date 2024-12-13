@@ -1,9 +1,8 @@
 import React from "react"
 import Navbar from "../src/components/Navbar"
-// import Herosection, { CTAButton, FloatingProfiles } from "./components/Herosection"
 import Herosection from "./components/Herosection"
 import { TrustedPartners } from "./components/TrustedPartners"
-import SalesSection from "./components/SalesSection"
+import SalesSection, { VideoCardHeaderSection, VideoCardSection } from "./components/SalesSection"
 import PointsSection, { Infrocard } from "./components/PointsSection"
 import InformationSection, { Leftsideimageofcompany } from "./components/InformationSection"
 import StatCounter from "./components/Countup"
@@ -18,6 +17,12 @@ import Laptop from "./components/Laptop";
 import StatCounter2 from "./components/counter2"
 import PointsSectiontext from "./components/PointsSectiontext"
 import MarketingHero from "./components/Marketin-hero"
+import SplitedConterner, { Dimondcardcomponent, DimondcardcomponentText } from "./components/SplitedConterner"
+import Integrationcardmain from "./components/Integrationcard"
+import TestimonialSlider from './components/TestimonialSlider'
+import Herosectionofgrided from "./components/herosectionofgrided"
+import TeamGrid from "./components/Teamgrid"
+import CareerSection from "./components/CareerSection"
 
 function App() {
 
@@ -54,13 +59,37 @@ function App() {
               <PointsSectiontext />
               <Infrocard />
             </div>
-            <div>
-              <MarketingHero />
-              <Leftsideimageofcompany />
+            <SplitedConterner />
+            <Integrationcardmain />
+            <div className=" grid md:grid-cols-2 justify-center items-center bg-[#003652]">
+              <VideoCardSection />
+              <VideoCardHeaderSection />
             </div>
+            <BlogSection />
+            <TestimonialSlider />
+            <Banner />
+            <TrustedPartners />
             <Footer />
           </>
         } />
+
+
+        <Route path="/3"
+          element={
+            <>
+              <Navbar />
+              <Herosectionofgrided />
+              <StatCounter />
+              <div className="grid md:grid-cols-2 px-8 h-full my-14">
+                <Dimondcardcomponent />
+                <DimondcardcomponentText />
+              </div>
+              <TeamGrid />
+              <CareerSection />
+              <Banner />
+              <Footer />  
+            </>
+          } />
       </Routes>
     </>
   )
